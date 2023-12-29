@@ -21,9 +21,9 @@ while ((line = file.ReadLine()) is not null)
     products.Add(product);
 }
 
+file.Close();
+
 Console.WriteLine($"Average price: {products.Average(x => x.Price).ToString("F2")}"); 
 products.OrderByDescending(x => x.Name).ToList().ForEach(x =>  Console.WriteLine(x.Name));
-
-file.Close();
 
 Console.ReadKey();
